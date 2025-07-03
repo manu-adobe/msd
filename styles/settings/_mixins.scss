@@ -1,0 +1,147 @@
+@use 'borders' as *;
+@use 'breakpoints' as *;
+@use 'colors' as *;
+@use 'elevations' as *;
+@use 'fonts' as *;
+@use 'spacings' as *;
+@use 'utils' as *;
+
+/******************************
+  Shared Placeholder Selectors
+*******************************/
+
+/* Base Input Styling (for text, number, email, textarea) */
+%input-base {
+  border-radius: $border-radius-mid;
+  border: $stroke-input-stroke solid $stroke-tertiary;
+  padding: $spacing-400;
+  background-color: $bg-light-primary;
+  font-family: $font-family;
+  font-size: 20px;
+  line-height: 120%;
+  color: $text-primary;
+  caret-color: $color-primary;
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: $stroke-accent;
+    background-color: $color-shade-blue-10;
+    outline: none;
+  }
+
+  &:disabled {
+    border-color: $color-grey-black-20;
+    background-color: $color-grey-black-05;
+    color: $text-secondary;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: $text-secondary;
+    }
+  }
+}
+
+/******************************
+  Button Placeholders
+*******************************/
+
+%button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-300 $spacing-500;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.2;
+  border-radius: $border-radius-round;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Primary Button */
+%button--primary {
+  @extend %button;
+  background-color: $color-primary;
+  color: $color-white;
+  border: 2px solid $stroke-accent;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+
+  &:active {
+    background-color: $color-primary-darker;
+  }
+
+  &:disabled {
+    background-color: $color-grey-black-10;
+    color: $color-grey-black-40;
+    cursor: not-allowed;
+  }
+}
+
+/* Hollow (Outline) Button */
+%button--hollow {
+  @extend %button;
+  background-color: transparent;
+  color: $text-dark-primary;
+  border: 2px solid $stroke-tertiary;
+
+  &:hover {
+    background-color: $color-shade-blue-10;
+  }
+
+  &:active {
+    background-color: $color-shade-blue-25;
+  }
+
+  &:disabled {
+    color: $color-grey-black-40;
+    border-color: $color-grey-black-20;
+    cursor: not-allowed;
+  }
+}
+
+/******************************
+  Error State
+*******************************/
+
+/* Input Error State */
+@mixin input-error {
+  border: $stroke-input-stroke solid $color-feedback-red;
+  background-color: $bg-light-primary;
+  color: $color-feedback-red;
+
+  &::placeholder {
+    color: $color-feedback-red;
+  }
+}
+
+/******************************
+  Wizard Hero Welcome
+*******************************/
+
+@mixin responsive-padding-bottom($mobile, $tablet, $desktop) {
+  padding-bottom: $mobile;
+
+  @include media('tablet') {
+    padding-bottom: $tablet;
+  }
+
+  @include media('desktop') {
+    padding-bottom: $desktop;
+  }
+}
+
+// Checkbox Variant Pills
+@mixin border-radius-pill {
+  border-radius: 9999px;
+}

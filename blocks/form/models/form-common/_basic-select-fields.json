@@ -8,13 +8,19 @@
             "name": "enum",
             "label": "Options (Data Value)",
             "valueType": "string",
-            "multi": true,
-            "required": true
+            "multi": true
         },
         {
             "component": "text",
             "name": "enumNames",
             "label": "Options (Display Value)",
+            "valueType": "string",
+            "multi": true
+        },
+        {
+            "component": "text",
+            "name": "enumDescriptions",
+            "label": "Enter a description to be displayed below the text",
             "valueType": "string",
             "multi": true
         },

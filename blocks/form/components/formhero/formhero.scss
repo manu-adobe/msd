@@ -1,26 +1,36 @@
 @use '../../../../styles/settings' as *;
 
 .wizard {
-  .panel-formhero {
+  // Temporary specificity
+  // Remove this as the grid component come in
+  .panel-formhero.current-wizard-step {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
 
     @include media('desktop') {
       flex-direction: row;
-      text-align: left;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      gap: 0 $spacing-400;
+    }
+
+    legend {
+      display: none;
     }
   }
 
+  .panel-formhero__inner {
+    @include media('desktop') {
+      align-items: center;
+    }
+  }
   .panel-formhero__picture {
-    width: 100%;
-    max-width: 160px;
-    margin-bottom: 32px;
+    margin-bottom: $spacing-600;
+    max-width: 311px;
 
     @include media('desktop') {
-      max-width: 240px;
+      margin-bottom: 0;
+      max-width: 458px;
     }
   }
 
@@ -29,8 +39,8 @@
 
     h2 {
       @include heading-level-1;
-      margin-bottom: $spacing-500;
       margin-top: 0;
+      margin-bottom: $spacing-500;
     }
 
     p {
@@ -40,7 +50,29 @@
 
     @include media('desktop') {
       order: 0;
-      width: 510px;
+      max-width: 577px;
+    }
+  }
+
+  // Panel Hero on Mahi form
+  .panel-formhero.field-intro3 {
+    .panel-formhero__content {
+      p {
+        p {
+          font-size: 28px;
+          color: $text-dark;
+          margin-bottom: $spacing-200;
+
+          @include media('tablet') {
+            font-size: 30px;
+          }
+
+          @include media('desktop') {
+            font-size: 32px;
+            margin-bottom: $spacing-300;
+          }
+        }
+      }
     }
   }
 }
