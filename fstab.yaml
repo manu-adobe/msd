@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: 'https://author-p137277-e1382426.adobeaemcloud.com/bin/franklin.delivery/marsdensoftware/aem-edge-forms-3/feature-frontend'
+    url: 'https://author-p112856-e1108091.adobeaemcloud.com/bin/franklin.delivery/manu-adobe/msd/feature-frontend'
     type: 'markup'
     suffix: '.html'
