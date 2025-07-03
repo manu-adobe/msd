@@ -1,10 +1,10 @@
 export default function decorate(panel: Element) {
   panel.classList.add('panel-formwelcome')
-  const children = panel.querySelectorAll(':scope > fieldset')
+  const children = panel.querySelectorAll(':scope > fieldset');
 
   // container for text
   children[0].classList.add('panel-formwelcome__header')
-
+  
   // container for items
   const container = children[1]
   children[1].classList.add('panel-formwelcome__content-container')
